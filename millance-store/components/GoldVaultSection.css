@@ -1,0 +1,250 @@
+.gold-vault-card {
+  background: linear-gradient(135deg, #FFF9E5 0%, #FFE8B8 100%);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(255, 193, 7, 0.2);
+  transition: all 0.4s ease;
+  border: 2px solid #FFD700;
+}
+
+.gold-vault-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.gold-vault-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(255, 193, 7, 0.3);
+  border-color: #FFC107;
+}
+
+.gold-vault-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+  animation: float-icon 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.gold-vault-icon {
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.gold-vault-content {
+  position: relative;
+  z-index: 1;
+}
+
+.gold-vault-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #B8860B;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(184, 134, 11, 0.2);
+}
+
+.gold-vault-subtitle {
+  font-size: 16px;
+  color: #D4A017;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.gold-vault-description {
+  font-size: 14px;
+  color: #6B5000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.gold-vault-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gold-vault-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #5D4E00;
+  font-weight: 500;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.gold-vault-benefits li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+  border-radius: 8px;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.benefit-text {
+  flex: 1;
+}
+
+.gold-vault-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-gold-primary,
+.btn-gold-secondary {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.btn-gold-primary {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
+}
+
+.btn-gold-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-gold-primary:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-gold-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.5);
+}
+
+.btn-gold-primary:active {
+  transform: translateY(0);
+}
+
+.btn-gold-secondary {
+  background: white;
+  color: #B8860B;
+  border: 2px solid #FFD700;
+}
+
+.btn-gold-secondary:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.btn-gold-secondary:active {
+  transform: translateY(0);
+}
+
+.gold-vault-decoration {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gold-vault-card {
+    padding: 28px;
+  }
+
+  .gold-vault-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+
+  .gold-vault-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gold-vault-title {
+    font-size: 24px;
+  }
+
+  .gold-vault-subtitle {
+    font-size: 14px;
+  }
+
+  .gold-vault-description {
+    font-size: 13px;
+  }
+
+  .gold-vault-actions {
+    flex-direction: column;
+  }
+
+  .btn-gold-primary,
+  .btn-gold-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

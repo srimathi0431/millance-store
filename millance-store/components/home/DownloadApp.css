@@ -1,0 +1,236 @@
+/* Download App Section Styles */
+.download-app-section {
+  margin: 3rem 0;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1F2937 100%);
+  border-radius: var(--radius-lg);
+  color: white;
+}
+
+.download-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.download-info {
+  flex: 1;
+}
+
+.app-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.download-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.download-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* App Features */
+.app-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-success);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Store Buttons */
+.store-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  color: white;
+  transition: all var(--transition-fast);
+}
+
+.store-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.store-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.store-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* QR Code */
+.qr-code-wrapper {
+  flex-shrink: 0;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow-xl);
+}
+
+.qr-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.qr-placeholder p {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .download-content {
+    gap: 2rem;
+  }
+
+  .download-title {
+    font-size: 2rem;
+  }
+
+  .qr-code {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .download-app-section {
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .download-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app-icon {
+    margin: 0 auto 1.5rem;
+  }
+
+  .download-title {
+    font-size: 1.75rem;
+  }
+
+  .download-description {
+    font-size: 1rem;
+  }
+
+  .app-features {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .feature {
+    justify-content: center;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+
+  .qr-code {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-app-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .download-title {
+    font-size: 1.5rem;
+  }
+
+  .store-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .store-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-features {
+    gap: 0.75rem;
+  }
+
+  .feature {
+    font-size: 0.9375rem;
+  }
+}

@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════════
+   GLOBAL IMAGE STYLES - PRODUCTION READY
+   ═══════════════════════════════════════════════════════════════════
+   Ensures ALL images display perfectly across the entire website
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Base image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent broken image icons */
+img::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Image loading animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.image-loading {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Product card images */
+.product-card-amazon img,
+.product-img,
+.deal-image,
+.category-real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.product-card-amazon:hover img {
+  transform: scale(1.05);
+}
+
+/* Category card images */
+.category-pro-image img,
+.category-item-image img,
+.category-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Search autocomplete images */
+.search-autocomplete__image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  flex-shrink: 0;
+  background: #F5F5F5;
+}
+
+/* Ensure images never appear broken */
+img[src=""],
+img:not([src]),
+img[src="#"] {
+  display: none;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+/* Responsive image containers */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.image-container::before {
+  content: '';
+  display: block;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE IMAGE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .product-img,
+  .deal-image {
+    height: 200px;
+  }
+  
+  .category-pro-image {
+    height: 150px;
+  }
+  
+  .search-autocomplete__image {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-img,
+  .deal-image {
+    height: 250px;
+  }
+  
+  .category-pro-image {
+    height: 200px;
+  }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1025px) {
+  .product-img,
+  .deal-image {
+    height: 300px;
+  }
+  
+  .category-pro-image {
+    height: 250px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   IMAGE ERROR HANDLING
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Style for images that fail to load */
+img[alt]::after {
+  content: attr(alt);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Hide alt text when image loads successfully */
+img[alt]:not([src=""]) {
+  font-size: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   OPTIMIZED IMAGE COMPONENT STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.optimized-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.optimized-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.optimized-image-wrapper:hover img {
+  transform: scale(1.05);
+}

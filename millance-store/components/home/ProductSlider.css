@@ -1,0 +1,75 @@
+/* Product Slider Section Styles */
+.product-slider-section {
+  margin: 3rem 0;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  transition: all var(--transition-fast);
+}
+
+.slider-btn:hover {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.products-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 1rem;
+}
+
+.products-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-item {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .slider-item {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-slider-section {
+    margin: 2rem 0;
+  }
+
+  .slider-item {
+    width: 200px;
+  }
+
+  .products-slider {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item {
+    width: 160px;
+  }
+}

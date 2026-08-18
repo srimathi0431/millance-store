@@ -1,0 +1,28 @@
+.premium-sections-container {
+  background: #E3E6E6;
+  padding: 32px 0;
+}
+
+.premium-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .premium-sections-grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-sections-container {
+    padding: 24px 0;
+  }
+
+  .premium-sections-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

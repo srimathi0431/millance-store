@@ -1,0 +1,38 @@
+# ── Backend ───────────────────────────────────────────────────
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.env
+backend/venv/
+backend/.venv/
+backend/*.egg-info/
+backend/dist/
+backend/build/
+
+# ── Website (millance-store) ───────────────────────────────────
+millance-store/node_modules/
+millance-store/dist/
+millance-store/.env
+millance-store/.env.local
+millance-store/.env.production
+
+# ── Flutter App (millancestoreapp) ────────────────────────────
+millancestoreapp/.dart_tool/
+millancestoreapp/.flutter-plugins
+millancestoreapp/.flutter-plugins-dependencies
+millancestoreapp/build/
+millancestoreapp/.pub-cache/
+millancestoreapp/android/.gradle/
+millancestoreapp/android/local.properties
+millancestoreapp/ios/Pods/
+millancestoreapp/ios/.symlinks/
+millancestoreapp/**/*.g.dart
+millancestoreapp/**/*.freezed.dart
+
+# ── General ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+.idea/
+.vscode/

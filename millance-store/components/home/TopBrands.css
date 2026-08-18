@@ -1,0 +1,118 @@
+/* Top Brands Section Styles */
+.top-brands-section {
+  margin: 3rem 0;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.brand-card {
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.brand-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-card:hover .brand-logo {
+  background: rgba(200, 162, 58, 0.1);
+}
+
+.brand-letter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.brand-description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-brands-section {
+    margin: 2rem 0;
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .brand-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .brand-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .brand-letter {
+    font-size: 2.5rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-description {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .brand-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-letter {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,1007 @@
+/* ═══════════════════════════════════════════════════════════════════
+   MILLANCE STORE - PREMIUM GLOBAL STYLES
+   ═══════════════════════════════════════════════════════════════════
+   Brand Colors from Logo: Orange → Pink → Purple Gradient
+   Modern E-Commerce Design System
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Import Image Styles */
+@import './images.css';
+
+/* ─── CSS Reset (Modern Normalize) ──────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Root CSS Variables (Millance Logo Colors) ─────────────────── */
+:root {
+  /* Primary Brand Colors (From Logo) */
+  --color-orange: #FF7A00;
+  --color-golden-orange: #FFB000;
+  --color-pink: #FF3D8D;
+  --color-magenta: #E91E63;
+  --color-purple: #7B2FF7;
+  --color-dark-navy: #0F172A;
+  --color-white: #FFFFFF;
+  
+  /* Brand Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF7A00 0%, #FF3D8D 50%, #7B2FF7 100%);
+  --gradient-orange-pink: linear-gradient(135deg, #FF7A00 0%, #FF3D8D 100%);
+  --gradient-pink-purple: linear-gradient(135deg, #FF3D8D 0%, #7B2FF7 100%);
+  --gradient-orange-purple: linear-gradient(135deg, #FFB000 0%, #E91E63 50%, #7B2FF7 100%);
+  --gradient-hover: linear-gradient(135deg, #FFB000 0%, #FF3D8D 50%, #7B2FF7 100%);
+  
+  /* Semantic Colors */
+  --color-primary: #FF7A00;
+  --color-primary-light: #FFB000;
+  --color-primary-dark: #E66A00;
+  --color-secondary: #FF3D8D;
+  --color-accent: #7B2FF7;
+  
+  /* Backgrounds */
+  --color-background: #FAFAFA;
+  --color-background-light: #FFFFFF;
+  --color-background-dark: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FEFEFE;
+  
+  /* Text Colors */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+  
+  /* Borders */
+  --color-border: #E2E8F0;
+  --color-border-light: #F1F5F9;
+  --color-border-medium: #CBD5E1;
+  
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-error: #EF4444;
+  --color-error-light: #FEE2E2;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-info: #3B82F6;
+  --color-info-light: #DBEAFE;
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 20px rgba(15, 23, 42, 0.10);
+  --shadow-xl: 0 12px 28px rgba(15, 23, 42, 0.12);
+  --shadow-2xl: 0 20px 40px rgba(15, 23, 42, 0.15);
+  --shadow-gradient: 0 8px 24px rgba(255, 122, 0, 0.3);
+  --shadow-gradient-lg: 0 12px 32px rgba(255, 61, 141, 0.4);
+  --shadow-hover: 0 12px 32px rgba(123, 47, 247, 0.25);
+  
+  /* Gradient Overlays */
+  --gradient-overlay: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.6) 100%);
+  --gradient-shimmer: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;     /* 8px */
+  --radius-md: 1rem;       /* 16px */
+  --radius-lg: 1.25rem;    /* 20px */
+  --radius-xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;   /* Full rounded */
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --radius-xl: 1.5rem;     /* 24px */
+  --radius-2xl: 2rem;      /* 32px */
+  --radius-full: 9999px;   /* Circle */
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-Index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-notification: 1080;
+}
+
+/* ─── Base HTML & Body ───────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent Horizontal Scroll on All Elements */
+*, *::before, *::after {
+  max-width: 100%;
+}
+
+/* Mobile Touch Optimization */
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(255, 122, 0, 0.1);
+  touch-action: manipulation;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Typography (Premium Font Styling) ─────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: 3rem; font-weight: 700; }
+h2 { font-size: 2.25rem; font-weight: 700; }
+h3 { font-size: 1.875rem; font-weight: 600; }
+h4 { font-size: 1.5rem; font-weight: 600; }
+h5 { font-size: 1.25rem; font-weight: 600; }
+h6 { font-size: 1.125rem; font-weight: 600; }
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.625;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ─── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background: var(--gradient-primary);
+  background-color: var(--color-pink);
+  color: var(--color-text-inverse);
+}
+
+::-moz-selection {
+  background-color: var(--color-pink);
+  color: var(--color-text-inverse);
+}
+
+/* ─── Scrollbar (Modern Styling) ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-background);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-orange) var(--color-background);
+}
+
+/* ─── Focus Visible (Accessibility) ─────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+}
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ─── Lists ──────────────────────────────────────────────────────── */
+ul, ol {
+  list-style: none;
+}
+
+/* ─── Container (Premium Max-Width) ─────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LUXURY ANIMATIONS (Apple-Level)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--color-gold); }
+  50% { box-shadow: 0 0 20px var(--color-gold); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Animation Utility Classes ──────────────────────────────────── */
+.animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+.animate-slideUp { animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.animate-slideDown { animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.animate-scaleUp { animation: scaleUp 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+.animate-shimmer { animation: shimmer 2s infinite; }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LUXURY UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Shadows */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-gold { box-shadow: var(--shadow-gold); }
+.shadow-none { box-shadow: none; }
+
+/* Hover Shadows */
+.hover-shadow:hover { box-shadow: var(--shadow-hover); }
+
+/* Borders */
+.border { border: 1px solid var(--color-border); }
+.border-gold { border: 1px solid var(--color-divider-gold); }
+.border-none { border: none; }
+
+/* Border Radius */
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* Transitions */
+.transition { transition: all var(--transition-normal); }
+.transition-fast { transition: all var(--transition-fast); }
+.transition-slow { transition: all var(--transition-slow); }
+
+/* Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Glass Effect */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+}
+
+/* Gradients */
+.gradient-primary { background: var(--gradient-primary); }
+.gradient-gold { background: var(--gradient-gold); }
+.gradient-emerald { background: var(--gradient-emerald); }
+
+/* Text */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-gold { color: var(--color-gold); }
+.text-success { color: var(--color-success); }
+.text-error { color: var(--color-error); }
+
+/* Background */
+.bg-white { background-color: var(--color-surface); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-gold { background-color: var(--color-gold); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LOADING SKELETON (Luxury Style)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-light) 25%,
+    var(--color-surface) 50%,
+    var(--color-background-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RIPPLE EFFECT (Premium Button Feedback)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE (Mobile-First)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  .container { padding: 0 var(--spacing-md); }
+}
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar { width: 8px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   PREMIUM BUTTON STYLES - MILLANCE STORE
+   Orange → Pink → Purple Gradient Theme
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Base Button Reset ──────────────────────────────────────────── */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ─── Primary Gradient Button (Default) ──────────────────────────── */
+button,
+.btn,
+.btn-primary,
+input[type="submit"],
+input[type="button"],
+button[type="submit"],
+button[type="button"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-gradient);
+  transition: all var(--transition-base);
+  overflow: hidden;
+  z-index: 1;
+}
+
+button::before,
+.btn::before,
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-hover);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: -1;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+button:hover::before,
+.btn:hover::before,
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+button:active,
+.btn:active,
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid rgba(255, 122, 0, 0.4);
+  outline-offset: 2px;
+}
+
+/* ─── Button Sizes ───────────────────────────────────────────────── */
+.btn-xs,
+button.btn-xs {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-sm,
+button.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg,
+button.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: var(--radius-lg);
+}
+
+.btn-xl,
+button.btn-xl {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+}
+
+/* ─── Secondary Button (Outline) ──────────────────────────────────── */
+.btn-secondary,
+button.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), var(--gradient-primary);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary::before,
+button.btn-secondary::before {
+  background: var(--gradient-primary);
+  opacity: 0.1;
+}
+
+.btn-secondary:hover,
+button.btn-secondary:hover {
+  color: var(--color-white);
+  box-shadow: var(--shadow-gradient);
+}
+
+.btn-secondary:hover::before,
+button.btn-secondary:hover::before {
+  opacity: 1;
+}
+
+/* ─── Ghost Button (Transparent) ───────────────────────────────────── */
+.btn-ghost,
+button.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.btn-ghost::before,
+button.btn-ghost::before {
+  background: var(--gradient-primary);
+  opacity: 0;
+}
+
+.btn-ghost:hover,
+button.btn-ghost:hover {
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-ghost:hover::before,
+button.btn-ghost:hover::before {
+  opacity: 1;
+}
+
+/* ─── Icon Button (Circular) ────────────────────────────────────── */
+.btn-icon,
+button.btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+.btn-icon.btn-sm,
+button.btn-icon.btn-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-icon.btn-lg,
+button.btn-icon.btn-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ─── Full Width Button ──────────────────────────────────────────── */
+.btn-block,
+button.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+/* ─── Button Group ───────────────────────────────────────────────── */
+.btn-group {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.btn-group > button:not(:last-child),
+.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > button:not(:first-child),
+.btn-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* ─── Loading State ──────────────────────────────────────────────── */
+.btn-loading,
+button.btn-loading {
+  position: relative;
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn-loading::after,
+button.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  color: var(--color-white);
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Special Variants ────────────────────────────────────────────── */
+
+/* Orange Variant */
+.btn-orange,
+button.btn-orange {
+  background: linear-gradient(135deg, #FF7A00 0%, #FFB000 100%);
+}
+
+.btn-orange::before,
+button.btn-orange::before {
+  background: linear-gradient(135deg, #FFB000 0%, #FFC933 100%);
+}
+
+/* Pink Variant */
+.btn-pink,
+button.btn-pink {
+  background: linear-gradient(135deg, #FF3D8D 0%, #E91E63 100%);
+}
+
+.btn-pink::before,
+button.btn-pink::before {
+  background: linear-gradient(135deg, #FF5FA1 0%, #F06292 100%);
+}
+
+/* Purple Variant */
+.btn-purple,
+button.btn-purple {
+  background: linear-gradient(135deg, #7B2FF7 0%, #9C4DFF 100%);
+}
+
+.btn-purple::before,
+button.btn-purple::before {
+  background: linear-gradient(135deg, #9C4DFF 0%, #B370FF 100%);
+}
+
+/* Success Button */
+.btn-success,
+button.btn-success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.btn-success:hover,
+button.btn-success:hover {
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+}
+
+/* Danger/Delete Button */
+.btn-danger,
+button.btn-danger {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.btn-danger:hover,
+button.btn-danger:hover {
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+}
+
+/* ─── Shimmer Effect (Premium) ───────────────────────────────────── */
+.btn-shimmer,
+button.btn-shimmer {
+  overflow: hidden;
+}
+
+.btn-shimmer::after,
+button.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-shimmer);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+/* ─── Pulse Animation (Call to Action) ───────────────────────────── */
+.btn-pulse,
+button.btn-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ─── Responsive Button Styles ───────────────────────────────────── */
+@media (max-width: 768px) {
+  button,
+  .btn,
+  .btn-primary {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-lg,
+  button.btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+  
+  .btn-xl,
+  button.btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  button,
+  .btn,
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group > button,
+  .btn-group > .btn {
+    width: 100%;
+    border-radius: var(--radius-md) !important;
+  }
+}
+
+/* ─── Specific Component Button Overrides ─────────────────────────── */
+
+/* Cart Buttons */
+.add-to-cart-btn,
+.buy-now-btn,
+.checkout-btn {
+  min-width: 120px;
+}
+
+/* Navigation Buttons */
+nav button,
+.nav-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+}
+
+/* Form Submit Buttons */
+form button[type="submit"],
+form input[type="submit"] {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Modal/Dialog Buttons */
+.modal-footer button,
+.dialog-footer button {
+  min-width: 100px;
+}
+
+/* Product Card Buttons */
+.product-card button {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Hero Section CTA */
+.hero-section button,
+.cta-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-gradient-lg);
+}
+
+.hero-section button:hover,
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   END BUTTON STYLES
+   ═══════════════════════════════════════════════════════════════════ */
