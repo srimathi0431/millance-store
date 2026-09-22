@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../config/app_colors.dart';
 import '../../models/product_model.dart';
 import '../../providers/cart_provider.dart';
+import '../../services/storage_service.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   final ProductModel product;
@@ -30,6 +31,20 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   Future<void> _addToCart() async {
+    // Check if user is logged in
+    final token = await StorageService.getAccessToken();
+    if (token == null || token.isEmpty) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please login to add items to cart'),
+          backgroundColor: AppColors.error,
+          duration: Duration(seconds: 3),
+        ),
+      );
+      return;
+    }
+    
     setState(() => _isAdding = true);
     
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
@@ -51,10 +66,17 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ),
       );
     } else {
+      // Check if error is related to authentication
+      final errorMsg = cartProvider.error ?? 'Failed to add to cart';
+      final isAuthError = errorMsg.toLowerCase().contains('token') || 
+                          errorMsg.toLowerCase().contains('unauthorized') ||
+                          errorMsg.toLowerCase().contains('expired');
+      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(cartProvider.error ?? 'Failed to add to cart'),
+          content: Text(isAuthError ? 'Please login again' : errorMsg),
           backgroundColor: AppColors.error,
+          duration: const Duration(seconds: 3),
         ),
       );
     }

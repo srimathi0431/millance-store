@@ -163,7 +163,11 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '₹${item.price.toStringAsFixed(2)}',
+                    item.price > 0 
+                        ? '₹${item.price.toStringAsFixed(2)}'
+                        : item.total > 0 && item.quantity > 0
+                            ? '₹${(item.total / item.quantity).toStringAsFixed(2)}'
+                            : '₹0.00',
                     style: const TextStyle(
                       fontSize: 14,
                       color: AppColors.textSecondary,

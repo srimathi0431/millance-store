@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'config/app_theme.dart';
 import 'providers/auth_provider.dart';
 import 'providers/cart_provider.dart';
-import 'screens/splash_screen.dart';
+import 'screens/splash/premium_splash_screen.dart';
 import 'screens/auth/register_screen.dart';
 import 'services/deep_link_service.dart';
 
@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         navigatorKey: navigatorKey,
-        home: SplashScreen(initialReferralCode: _initialReferralCode),
+        home: const PremiumSplashScreen(),
       ),
     );
   }
